@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document-3</title>
+
+    <style>
+        /* Unvisited Link */
+        a:link {
+            color: orange;
+            font-size: larger;
+        }
+
+        /* Visited Link */
+        a:visited {
+            color: red;
+            font-size: larger;
+        }
+
+        /* Paragraph Styling */
+        .para {
+            color: dimgray;
+            font-size: larger;
+        }
+
+        /* First Line */
+        .para::first-line {
+            color: blue;
+            font-family: cursive;
+        }
+
+        /* First Letter */
+        .para::first-letter {
+            font-size: xx-large;
+            color: coral;
+        }
+
+        /* Selected Text */
+        ::selection {
+            background-color: yellow;
+            color: black;
+        }
+
+        /* Circle */
+        .circle {
+            height: 100px;
+            width: 100px;
+            background-color: palevioletred;
+            border-radius: 50%;
+            margin-top: 50px;
+            margin-left: 50px;
+            transition: transform 0.3s ease;
+        }
+
+        /* Hover Effect */
+        .circle:hover {
+            transform: scale(1.5);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="link">
+        <a href="./1.html">Prog-1</a>
+    </div>
+
+    <div class="para">
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+        Dolorem laboriosam possimus culpa ut quos non quam eum!
+        Perspiciatis possimus ipsam debitis vero nisi quod nemo
+        repellendus doloremque suscipit? Distinctio, consectetur!
+    </div>
+
+    <div class="circle"></div>
+</body>
+</html>

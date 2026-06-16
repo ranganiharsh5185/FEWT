@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>4</title>
+</head>
+<body>
+    <script>
+        let n = parseInt(prompt("Enter number"));
+        let a = 0, b = 1, sum;
+
+        for (let i = 0; i < n; i++) {
+            document.write(a + " ");
+            sum = a + b;
+            a = b;
+            b = sum;
+        }
+    </script>
+</body>
+</html>

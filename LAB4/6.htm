@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        num = (prompt("Enter the number :"))
+
+        if(isNaN(num))
+                {
+                    document.write("not a number")
+                }
+
+        else if (num <0 && num > 999)
+                {
+                    document.write("out of range")
+                }
+
+        else{
+
+        once =["zero","one","two","three","four","five", "six", "seven" ,"eight" ,"nine", "ten", "eleven", "twelve", "thirteen" ,"fourteen" ,"fifthteen" ,"sixteen" ,"seventeen" ,"eightteen" ,"nineteen"]
+        tense =["","","twenty","thirty","fourty","fifty","sixty","seventy","eighty","ninety"];
+        hundreds=["","one hundred"," two hundred","three hundred","four hundred","five hundred","six hundred","seven hundred","eight hundred","nine hundred"]
+
+
+        result ="";
+
+        if(num>99){
+
+            result =result + hundreds[parseInt(num/100)];
+            num = num %100;
+        }
+         if(num>19){
+
+            result =result + " " + tense[parseInt(num/10)];
+            num = num %10;
+        }
+         if(num>=0){
+
+            result=result + " " + once[num];
+        }
+        document.write(result)
+    }
+    </script>
+</body>
+</html>

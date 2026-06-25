@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find word in Array</title>
+</head>
+<body>
+    <script>
+        let n=prompt("Enter string: ")
+        let arr=n.split(" ")
+        let word=prompt("Enter any one word from string: ")
+        for (let i = 0; i < arr.length; i++) {
+            if(word==arr[i]){
+                document.write("Word found at index "+i)
+            }
+        }
+    </script>
+    <!-- use split moethod -->
+</body>
+</html>

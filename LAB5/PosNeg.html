@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seperate Possitive & Negative</title>
+</head>
+
+<body>
+    <script>
+        let n = parseInt(prompt("Enter size of Array: "))
+        let arr = []
+        for (let i = 0; i < n; i++) {
+            arr[i] = parseInt(prompt("Enter Array " + (i + 1) + " : "));
+        }
+        let ap = []
+        let an = []
+        for (let i = 0; i < n; i++) {
+            if (arr[i]>=0) {
+                ap.push(arr[i])
+            } else {
+                an.push(arr[i])
+            }
+        }
+        document.write("Possitive Num: "+ap+"<br>")
+        document.write("Negative Num: "+an)
+    </script>
+</body>
+
+</html>

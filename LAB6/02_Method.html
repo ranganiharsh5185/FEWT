@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let a = [1, 2, 3, 4, 5];
+
+      a.push(
+        parseInt(
+          prompt("Enter the element to be added at the end of the array:"),
+        ),
+      );
+      document.write("push:-<br>");
+      for (let i = 0; i < a.length; i++) {
+        document.write(a[i] + " ");
+      }
+
+      a.pop();
+      document.write("<br>pop:-<br>");
+      for (let i = 0; i < a.length; i++) {
+        document.write(a[i] + " ");
+      }
+
+      a.shift();
+      document.write("<br>shift:-<br>");
+      for (let i = 0; i < a.length; i++) {
+        document.write(a[i] + " ");
+      }
+
+      a.unshift(parseInt(prompt("Enter the element to be added at the beginning of the array:")));
+      document.write("<br>unshift:-<br>");
+      for (let i = 0; i < a.length; i++) {
+        document.write(a[i] + " ");
+      }
+
+      a.sort(function (a, b) {
+        return a - b;
+      });
+      document.write("<br>sort:-<br>");
+      for (let i = 0; i < a.length; i++) {
+        document.write(a[i] + " ");
+      }
+
+      let slicedArray = a.slice(2, 3);
+      document.write("<br>slice:-<br>");
+      for (let i = 0; i < slicedArray.length; i++) {
+        document.write(slicedArray[i] + " ");
+      }
+
+      let splicedArray = a.splice(2, 2, 5);
+      document.write("<br>splice:-<br>");
+      for (let i = 0; i < splicedArray.length; i++) {
+        document.write(splicedArray[i] + " ");
+      }
+
+        document.write("<br>After Splice:-<br>");
+        for (let i = 0; i < a.length; i++) {
+          document.write(a[i] + " ");
+        }
+    </script>
+  </body>
+</html>

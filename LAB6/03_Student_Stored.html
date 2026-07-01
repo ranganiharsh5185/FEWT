@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <script>
+      let student = [
+        {
+          name: "Armando Shields",
+          gmail: "Matilda70@gmail.com",
+          phone: "(637) 598-1408",
+          department: "Computers",
+          id: "1",
+        },
+        {
+          name: "Toni Raynor",
+          gmail: "Makenzie.Brakus8@yahoo.com",
+          phone: "931-206-0758 x220",
+          department: "Industrial",
+          id: "2",
+        },
+        {
+          name: "Brent Lemke",
+          gmail: "Collin_Mosciski78@gmail.com",
+          phone: "659.498.4388 x009",
+          department: "Electronics",
+          id: "3",
+        },
+        {
+          name: "Jesse Medhurst",
+          gmail: "Berry14@gmail.com",
+          phone: "1-496-403-4282 x82656",
+          department: "Books",
+          id: "4",
+        },
+        {
+          name: "Ginger Cartwright",
+          gmail: "Jettie_Purdy85@hotmail.com",
+          phone: "(300) 877-9560",
+          department: "Kids",
+          id: "6",
+        },
+        {
+          name: "Kelli Baumbach",
+          gmail: "Brandyn_Senger@hotmail.com",
+          phone: "1-851-930-6038 x34968",
+          department: "Games",
+          id: "7",
+        },
+      ];
+      document.write("<table border='1'>");
+      document.write("<thead>");
+      document.write("<tr>");
+      document.write("<th>ID</th>");
+      document.write("<th>Name</th>");
+      document.write("<th>Gmail</th>");
+      document.write("<th>Phone</th>");
+      document.write("<th>Department</th>");
+
+      document.write("</tr>");
+      document.write("</thead>");
+      document.write("<tbody>");
+      for (let i = 0; i < student.length; i++) {
+        document.write("<tr>");
+        document.write("<td>" + student[i].id + "</td>");
+        document.write("<td>" + student[i].name + "</td>");
+        document.write("<td>" + student[i].gmail + "</td>");
+        document.write("<td>" + student[i].phone + "</td>");
+        document.write("<td>" + student[i].department + "</td>");
+        document.write("</tr>");
+      }
+      document.write("</tbody>");
+      document.write("</table>");
+    </script>
+  </body>
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color:beige;
+        }
+        button{
+            height: 70px;
+            width: 100px;
+            font-size: 40px;
+            background-color: yellow;
+            border-radius: 10px;
+        }
+        input{
+            font-size: 50px;
+            border-radius: 10px;
+            background-color:white;
+        }
+        table{
+            margin-left: 440px;
+            margin-top: 40px;
+            background-color: black;
+            align-items: center;
+        }
+        
+</style>
+</head>
+<body>
+    <table  border="0"
+      cellpadding="20"
+      style="border-radius: 20px;" >
+        <tr>
+            <td colspan="4"><input type="text" id="input"></td>
+        </tr>
+        <tr>
+            <td><button onclick="clearDisplay()">AC</button></td>
+            <td><button onclick="deleteLast()">C</button></td>
+            <td><button onclick="Display('%')">%</button></td>
+            <td><button onclick="Display('/')">/</button></td>
+        </tr>
+        <tr>
+            <td><button onclick="Display('7')">7</button></td>
+            <td><button onclick="Display('8')">8</button></td>
+            <td><button onclick="Display('9')">9</button></td>
+            <td><button onclick="Display('*')">*</button></td>
+        </tr>
+        <tr>
+            <td><button onclick="Display('4')">4</button></td>
+            <td><button onclick="Display('5')">5</button></td>
+            <td><button onclick="Display('6')">6</button></td>
+            <td><button onclick="Display('-') ">-</button></td>
+        </tr>
+        <tr>
+            <td><button onclick="Display('1')">1</button></td>
+            <td><button onclick="Display('2')">2</button></td>
+            <td><button onclick="Display('3')">3</button></td>
+            <td><button onclick="Display('+') ">+</button></td>
+        </tr>
+        <tr>
+            <td><button onclick="Display('0')">0</button></td>
+            <td><button onclick="Display('00')">00</button></td>
+            <td><button onclick="Display('.')">.</button></td>
+            <td><button onclick="calculate()">=</button></td>
+        </tr>
+        
+    </table>
+    <script>
+        
+        function Display(value){
+            document.getElementById("input").value += value;
+
+        }
+        function clearDisplay(){
+            document.getElementById("input").value = "";
+        }
+        function deleteLast(){
+            let display = document.getElementById("input");
+            display.value = display.value.slice(0, -1);
+
+        }
+          function calculate(){
+            let display = document.getElementById("input");
+            display.value = eval(display.value);
+        }
+        </script>
+</body>
+</html>

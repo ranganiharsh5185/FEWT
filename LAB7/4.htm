@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>form Validation</title>
+  </head>
+  <body>
+    <form onsubmit="formValidation(event)" method="get" target="_blank">
+      <table>
+        <tr>
+          <td><lable for="fname">Name</lable></td>
+          <td>
+            <input
+              type="text"
+              placeholder="Enter FullName"
+              required
+              id="fname"
+            />
+          </td>
+        </tr>
+        <tr>
+          <td><label for="password">Enter Password:</label></td>
+          <td>
+            <input
+              type="password"
+              placeholder="use upper/lowercase,numbers,symbols"
+              id="pass"
+              required
+            />
+          </td>
+        </tr>
+        <tr>
+          <td><label for="password">Confirm Password:</label></td>
+          <td>
+            <input
+              type="password"
+              placeholder="use upper/lowercase,numbers,symbols"
+              id="cpass"
+              required
+            />
+          </td>
+        </tr>
+
+        <tr>
+          <td><label for="eno">Enrollment no.:</label></td>
+          <td><input type="text" name="Enrollment no." id="eno" /></td>
+        </tr>
+        <tr>
+          <td><label for="age">Age:</label></td>
+          <td><input type="number" id="age" required /></td>
+        </tr>
+        <tr>
+          <td><lable for="email">Email</lable></td>
+          <td>
+            <input type="email" placeholder="Enter Email" required id="email" />
+          </td>
+        </tr>
+        <tr>
+          <td><input type="submit" value="Submit" /></td>
+        </tr>
+      </table>
+    </form>
+  </body>
+</html>

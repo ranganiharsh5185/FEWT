@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            height: 500px;
+            width: 500px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 125px;
+            margin-left: 500px;
+            background-color: aquamarine;
+            border-radius: 25px;
+
+        }
+    </style>
+</head>
+<body>
+    <div class="box" id="b">MOUSE EVENT</div>
+    <script>
+        document.getElementById("b").addEventListener("click",function(){
+            document.getElementById("b").innerHTML="click event"
+        })
+        document.getElementById("b").addEventListener("dblclick",function(){
+            document.getElementById("b").innerHTML="dblclick event"
+        })
+        document.getElementById("b").addEventListener("mousedown",function(){
+            document.getElementById("b").innerHTML="mousedown event"
+        })
+        document.getElementById("b").addEventListener("mouseup",function(){
+            document.getElementById("b").innerHTML="mouseup event"
+        })
+        document.getElementById("b").addEventListener("mouseover",function(){
+            document.getElementById("b").innerHTML="mouseover event"
+        })
+        document.getElementById("b").addEventListener("contextmenu ",function(b){
+            b.preventDefault();
+            document.getElementById("b").innerHTML="right click event"
+        })
+    </script>
+</body>
+</html>

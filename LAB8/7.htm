@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CRUD Application</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body{
+    background:#eef2f7;
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:30px;
+}
+
+.container{
+    width:750px;
+    background:#fff;
+    border-radius:12px;
+    padding:30px;
+    box-shadow:0 10px 30px rgba(0,0,0,.15);
+}
+
+h2{
+    text-align:center;
+    color:#2c3e50;
+    margin-bottom:25px;
+}
+
+.input-box{
+    display:flex;
+    gap:10px;
+    margin-bottom:20px;
+}
+
+input{
+    flex:1;
+    padding:12px;
+    font-size:16px;
+    border:1px solid #ced4da;
+    border-radius:6px;
+    outline:none;
+    transition:.3s;
+}
+
+input:focus{
+    border-color:#0d6efd;
+    box-shadow:0 0 5px rgba(13,110,253,.3);
+}
+
+.add-btn,
+.update-btn{
+    border:none;
+    color:#fff;
+    padding:12px 20px;
+    border-radius:6px;
+    cursor:pointer;
+    font-size:15px;
+    font-weight:600;
+    transition:.3s;
+}
+
+.add-btn{
+    background:#0d6efd;
+}
+
+.add-btn:hover{
+    background:#0b5ed7;
+}
+
+.update-btn{
+    background:#6c757d;
+}
+
+.update-btn:hover{
+    background:#5c636a;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+    margin-top:10px;
+    border-radius:8px;
+    overflow:hidden;
+}
+
+thead{
+    background:#343a40;
+    color:white;
+}
+
+th,td{
+    padding:14px;
+    text-align:center;
+}
+
+tbody tr:nth-child(even){
+    background:#f8f9fa;
+}
+
+tbody tr:nth-child(odd){
+    background:#ffffff;
+}
+
+tbody tr:hover{
+    background:#e9f2ff;
+}
+
+td{
+    border-bottom:1px solid #dee2e6;
+}
+
+.edit-btn{
+    background:#198754;
+    color:white;
+    border:none;
+    padding:8px 15px;
+    border-radius:5px;
+    cursor:pointer;
+    margin-right:5px;
+    transition:.3s;
+}
+
+.edit-btn:hover{
+    background:#157347;
+}
+
+.delete-btn{
+    background:#dc3545;
+    color:white;
+    border:none;
+    padding:8px 15px;
+    border-radius:5px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.delete-btn:hover{
+    background:#bb2d3b;
+}
+
+@media(max-width:768px){
+
+    .container{
+        width:100%;
+    }
+
+    .input-box{
+        flex-direction:column;
+    }
+
+    .add-btn,
+    .update-btn{
+        width:100%;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <h2>CRUD Application</h2>
+
+    <div class="input-box">
+        <input type="text" id="ib" placeholder="Enter Name">
+
+        <button class="add-btn" onclick="add()">Add</button>
+        <button class="update-btn" onclick="update()">Update</button>
+    </div>
+
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>NAME</th>
+                <th>ACTIONS</th>
+            </tr>
+        </thead>
+
+        <tbody id="tablebody"></tbody>
+
+    </table>
+
+</div>
+
+<script>
+
+let arr=[];
+let x=-1;
+
+function display(){
+
+    let temp="";
+
+    for(let i=0;i<arr.length;i++){
+
+        temp+=`
+        <tr>
+            <td>${i+1}</td>
+            <td>${arr[i]}</td>
+            <td>
+                <button class="edit-btn" onclick="edit(${i})">Edit</button>
+                <button class="delete-btn" onclick="del(${i})">Delete</button>
+            </td>
+        </tr>`;
+    }
+
+    document.getElementById("tablebody").innerHTML=temp;
+}
+
+function add(){
+
+    let sname=document.getElementById("ib").value.trim();
+
+    if(sname===""){
+        alert("Please enter a name");
+        return;
+    }
+
+    arr.push(sname);
+
+    display();
+
+    document.getElementById("ib").value="";
+}
+
+function edit(i){
+
+    x=i;
+    document.getElementById("ib").value=arr[i];
+}
+
+function update(){
+
+    if(x==-1){
+        alert("Please click Edit first.");
+        return;
+    }
+
+    let value=document.getElementById("ib").value.trim();
+
+    if(value===""){
+        alert("Please enter a name");
+        return;
+    }
+
+    arr[x]=value;
+
+    display();
+
+    document.getElementById("ib").value="";
+
+    x=-1;
+}
+
+function del(i){
+
+    if(confirm("Are you sure you want to delete this record?")){
+
+        arr.splice(i,1);
+
+        display();
+
+        document.getElementById("ib").value="";
+
+        x=-1;
+    }
+}
+
+</script>
+
+</body>
+</html>
